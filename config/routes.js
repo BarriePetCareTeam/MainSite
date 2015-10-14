@@ -45,6 +45,6 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+    'get /user/:id?': 'UserController.find',
     'post /user': 'UserController.create'
 };
