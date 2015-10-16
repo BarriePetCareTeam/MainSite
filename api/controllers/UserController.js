@@ -101,6 +101,30 @@ module.exports = {
             res.json(user);
 
         });
+    },
+
+    //DELETE  - Delete a user
+    destroy: function (req, res, next) {
+
+        var id = req.param('id');
+
+        if (!id) {
+            return res.badRequest('No id provided.');
+        }
+
+        User.findOne(id, function(err, result) {
+            if (err) return res.serverError(err);
+
+            if (!result) return res.notFound();
+
+            User.destroy(id, function (err) {
+
+                if (err) return next (err);
+
+                return res.json(result);
+            });
+
+        });
     }
 
 };
