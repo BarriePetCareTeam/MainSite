@@ -46,5 +46,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
     'get /user/:id?': 'UserController.find',
-    'post /user': 'UserController.create'
+    'post /user': 'UserController.create',
+    'put /user/:id?': 'UserController.update'
 };
