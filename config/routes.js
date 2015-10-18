@@ -21,6 +21,8 @@
  */
 
 module.exports.routes = {
+	
+
 
   /***************************************************************************
   *                                                                          *
@@ -34,7 +36,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +47,13 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  
+
+  // Custom CRUD Rest Routes
+  'post /post': 'PostController.create',
+  'get /post/:id?': 'PostController.find',
+  'put /post/:id?': 'PostController.update',
+  'delete /post/:id?': 'PostController.destroy'
+
 
 };
