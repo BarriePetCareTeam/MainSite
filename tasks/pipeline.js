@@ -15,7 +15,8 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/**/*.css',
+  '/node_modules/angular-toastr/angular-toastr.css'
 ];
 
 
@@ -28,9 +29,15 @@ var jsFilesToInject = [
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
+  '/bower_components/angular/angular.js',
+  '/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+  '/node_modules/angular-toastr/angular-toastr.js',
+
+
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
+  'js/public/signup/SignupModule.js',
   'js/**/*.js'
 ];
 
