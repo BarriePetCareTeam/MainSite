@@ -12,13 +12,13 @@ module.exports = {
 
     var params = req.params.all();
 
-    Post.create(params, function(err, sleep) {
+    Post.create(params, function(err, post) {
 
         if (err) return next(err);
 
         res.status(201);
 
-        res.json(sleep);
+        res.json(post);
 
     });
 },
@@ -118,7 +118,7 @@ find: function (req, res, next) {
             return res.badRequest('No id provided.');
         }
 
-        Post.findOne(id).done(function(err, result) {
+        Post.findOne(id, function(err, result) {
             if (err) return res.serverError(err);
 
             if (!result) return res.notFound();
