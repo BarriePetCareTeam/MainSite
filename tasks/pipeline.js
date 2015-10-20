@@ -16,7 +16,7 @@
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
   'styles/**/*.css',
-  '/node_modules/angular-toastr/angular-toastr.css'
+//  '/node_modules/angular-toastr/angular-toastr.css'
 ];
 
 
@@ -29,6 +29,7 @@ var jsFilesToInject = [
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
+  'lib/angular/angular.min.js',
   'lib/**/*.min.js',
   '/node_modules/angular-toastr/angular-toastr.js',
 
@@ -36,6 +37,7 @@ var jsFilesToInject = [
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
+  'js/public/app/PetsModule.js',
   'js/public/signup/SignupModule.js',
   'js/**/*.js'
 ];
