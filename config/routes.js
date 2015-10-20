@@ -22,6 +22,8 @@
 
 module.exports.routes = {
 
+
+
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
@@ -45,8 +47,17 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-    'get /user/:id?': 'UserController.find',
-    'post /user': 'UserController.create',
-    'put /user/:id?': 'UserController.update',
-    'delete /user:id?': 'UserController.destroy'
+
+
+  // User API
+  'get /user/:id?': 'UserController.find',
+  'post /user': 'UserController.create',
+  'put /user/:id?': 'UserController.update',
+  'delete /user:id?': 'UserController.destroy',
+
+  // POST API
+  'post /post': 'PostController.create',
+  'get /post/:id?': 'PostController.find',
+  'put /post/:id?': 'PostController.update',
+  'delete /post/:id?': 'PostController.destroy'
 };
