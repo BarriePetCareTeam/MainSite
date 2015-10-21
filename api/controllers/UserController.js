@@ -13,7 +13,8 @@ module.exports = {
 
     //PUT - Create new user
     create: function (req, res, next) {
-        var params = req.params.all();
+//        var params = req.params.all();
+        var params = req.body;
 
         User.create(params, function (err, user) {
             if (err) {
