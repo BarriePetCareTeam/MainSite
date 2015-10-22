@@ -1,20 +1,49 @@
-<!DOCTYPE html>
-<html>
+<div ng-controller="SignupController">
+    <div class="container">
+<!--        TEST IF ANGULAR IS WORKING-->
+        <h1>Signup {{1+1}}</h1>
 
-<head>
-    <title>Sign Up</title>
+        <form ng-submit="SignupPanel.signup()" class="col-lg-8 col-md-8 col-sm-12">
+            <h2 class="">Signup</h2>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <div class="control-group form-group col-md-6">
+                <label for="firstName" class="sr-only">First Name</label>
+                <input type="text" id="firstName" class="form-control" placeholder="First Name" required autofocus ng-model="SignupPanel.firstName">
+            </div>
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-</head>
+            <div class="control-group form-group col-md-6">
+                <label for="lastName" class="sr-only">Last Name</label>
+                <input type="text" id="lastName" class="form-control" placeholder="Last Name" required ng-model="SignupPanel.lastName">
+            </div>
 
-<body ng-app="SignupModule" ng-controller="SignupController" ng-cloak>
+            <div class="control-group form-group col-md-12">
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Email" required ng-model="SignupPanel.email">
+            </div>
 
-    <h1>Signup {{1+1}}</h1>
-</body>
+            <div class="control-group form-group col-md-6">
+                <label for="password1" class="sr-only">Password</label>
+                <input type="password" id="password1" class="form-control" placeholder="Password" required ng-model="SignupPanel.password1">
+            </div>
 
-</html>
+            <div class="control-group form-group col-md-6">
+                <label for="password2" class="sr-only">Re-enter password</label>
+                <input type="password" id="password2" class="form-control" placeholder="Re-enter password" required ng-model="SignupPanel.password2">
+            </div>
+
+            <div class="col-md-2 col-md-offset-5">
+                <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

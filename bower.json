@@ -22,7 +22,6 @@
   "dependencies": {
     "angular-bootstrap": "~0.14.2",
     "angular": "~1.4.7",
-    "jquery": "~2.1.4",
-    "bootstrap": "~3.3.5"
+    "angular-bootstrap": "~0.14.2"
   }
 }
