@@ -2,7 +2,8 @@ angular.module('SignupModule').controller('SignupController', ['$scope', '$http'
 
     $scope.SignupPanel = {};
     $scope.SignupPanel.submitForm = function () {
-        toastr.error('That email address has already been taken, please try again.', 'Error');
+        // TODO : TOASTER
+        // toastr.error('That email address has already been taken, please try again.', 'Error');
         $http.post('/user', {
             firstName : $scope.SignupPanel.firstName,
             lastName : $scope.SignupPanel.lastName,
