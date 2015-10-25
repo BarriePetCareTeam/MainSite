@@ -85,9 +85,21 @@
                 </span>
             </div>
 
+<!--
             <div class="col-md-2 col-md-offset-5">
                 <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
             </div>
+
+-->
+            <!-- Disable signup button until the form has no errors -->
+            <div class="col-md-2 col-md-offset-5">
+                <button class="btn btn-success btn-lg btn-block" type="submit" ng-disabled="signup.$invalid">
+                    <span ng-show="!signupForm.loading">Submit</span>
+                    <span class="overlord-loading-spinner fa fa-spinner" ng-show="signupForm.loading"></span>
+                    <span ng-show="signupForm.loading">Preparing your new account...</span>
+                </button>
+            </div>
+
         </form>
     </div>
 </div>
