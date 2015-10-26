@@ -1,0 +1,105 @@
+<div ng-controller="SignupController">
+    <div class="container">
+        <!-- TEST IF ANGULAR IS WORKING-->
+        <h1>Signup {{1+1}}</h1>
+
+        <form ng-submit="SignupPanel.submitForm()" name="signup" class="col-lg-8 col-md-8 col-sm-12">
+            <h2 class="">Signup</h2>
+
+            <!--FIRST NAME-->
+            <div class="control-group form-group col-md-6" ng-class="{'has-error':signup.firstName.$invalid && signup.firstName.$dirty}">
+                <input type="text" class="form-control" placeholder="First Name" name="firstName" ng-model="SignupPanel.firstName" ng-maxlength="25" required>
+                <span class="help-block has-error" ng-if="signup.firstName.$dirty">
+                <span ng-show="signup.firstName.$error.required">First name is required.</span>
+                <span ng-show="signup.firstName.$error.maxlength">The first name cannot be more than 25 characters.</span>
+                </span>
+            </div>
+
+            <!--LAST NAME-->
+            <div class="control-group form-group col-md-6" ng-class="{'has-error':signup.lastName.$invalid && signup.lastName.$dirty}">
+                <input type="text" class="form-control" placeholder="Last Name" name="lastName" ng-model="SignupPanel.lastName" ng-maxlength="25" required>
+                <span class="help-block has-error" ng-if="signup.lastName.$dirty">
+                <span ng-show="signup.lastName.$error.required">Last name is required.</span>
+                <span ng-show="signup.lastName.$error.maxlength">The last name cannot be more than 25 characters.</span>
+                </span>
+            </div>
+
+            <!--EMAIL-->
+            <div class="control-group form-group col-md-12" ng-class="{'has-error':signup.email.$invalid && signup.email.$dirty}">
+                <input type="email" class="form-control" placeholder="Email Address" name="email" ng-model="SignupPanel.email" ng-maxlength="50" required>
+                <span class="help-block has-error" ng-if="signup.title.$dirty">
+                <span ng-show="signup.email.$error.required">Email address is required.</span>
+                <span ng-show="signup.email.$error.maxlength">The email address cannot be more than 50 characters.</span>
+                </span>
+            </div>
+
+            <!--
+            <div class="control-group form-group col-md-6">
+                <label for="lastName" class="sr-only">Last Name</label>
+                <input type="text" id="lastName" class="form-control" placeholder="Last Name" required ng-model="SignupPanel.lastName">
+            </div>
+
+            <div class="control-group form-group col-md-12">
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Email" required ng-model="SignupPanel.email">
+            </div>
+
+            <div class="control-group form-group col-md-6">
+                <label for="password1" class="sr-only">Password</label>
+                <input type="password" id="password1" class="form-control" placeholder="Password" required ng-model="SignupPanel.password1">
+            </div>
+
+            <div class="control-group form-group col-md-6">
+                <label for="password2" class="sr-only">Re-enter password</label>
+                <input type="password" id="password2" class="form-control" placeholder="Re-enter password" required ng-model="SignupPanel.password2">
+            </div>
+
+
+            <div class="control-group form-group col-md-12" ng-class="{'has-error':signup.title.$invalid &&
+                                            signup.title.$dirty}">
+                <label>Your title</label>
+                <input type="text" class="form-control" placeholder="e.g. Genius" name="title" ng-model="SignupPanel.title" ng-maxlength="50" required>
+                <span class="help-block has-error" ng-if="signup.title.$dirty">
+                        <span ng-show="signup.title.$error.required">Title is required.</span>
+                <span ng-show="signup.title.$error.maxlength">The name cannot be more than 50 characters.</span>
+                </span>
+            </div>
+-->
+
+            <!--PASSWORD 1-->
+            <div class="control-group form-group col-md-6" ng-class="{'has-error':signup.password.$invalid && signup.password.$dirty}">
+                <!-- Added the compareTo directive that compares the passwords -->
+                <input type="password" class="form-control" placeholder="Password" name="password" ng-model="SignupPanel.password" id="password" required ng-minlength="6" compare-to="SignupPanel.confirmPassword">
+                <span class="help-block has-error" ng-if="signup.password.$dirty">
+                <span ng-show="signup.password.$error.required">Password is required.</span>
+                <span ng-show="signup.password.$error.minlength">Password must be at least 6 characters.</span>
+                </span>
+            </div>
+
+            <!--PASSWORD 2-->
+            <div class="control-group form-group col-md-6">
+                <input type="password" class="form-control" placeholder="Re-enter password" name="confirmation" ng-model="SignupPanel.confirmPassword" required>
+                <span class="help-block has-error" ng-if="signup.confirmation.$dirty">
+                <span ng-show="signup.password.$error.compareTo">Password must match.</span>
+                <span ng-show="signup.confirmation.$error.required">Confirmation password is required.</span>
+                </span>
+            </div>
+
+<!--
+            <div class="col-md-2 col-md-offset-5">
+                <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+            </div>
+
+-->
+            <!-- Disable signup button until the form has no errors -->
+            <div class="col-md-2 col-md-offset-5">
+                <button class="btn btn-success btn-lg btn-block" type="submit" ng-disabled="signup.$invalid">
+                    <span ng-show="!signupForm.loading">Submit</span>
+                    <span class="overlord-loading-spinner fa fa-spinner" ng-show="signupForm.loading"></span>
+                    <span ng-show="signupForm.loading">Preparing your new account...</span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

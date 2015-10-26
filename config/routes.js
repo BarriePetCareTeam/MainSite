@@ -47,13 +47,15 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
-
   // User API
   'get /user/:id?': 'UserController.find',
   'post /user': 'UserController.create',
   'put /user/:id?': 'UserController.update',
   'delete /user:id?': 'UserController.destroy',
+
+  'get /signup': {
+      view: 'signup'
+  }
 
   // POST API
   'post /post': 'PostController.create',

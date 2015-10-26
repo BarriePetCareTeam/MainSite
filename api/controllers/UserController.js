@@ -11,9 +11,15 @@
 
 module.exports = {
 
-    //PUT - Create new user
+    //POST - Create new user
     create: function (req, res, next) {
-        var params = req.params.all();
+//        var params = req.params.all();
+        var params = {
+            firstName : req.body.firstName,
+            lastName : req.body.lastName,
+            email : req.body.email,
+            password : req.body.password
+        };
 
         User.create(params, function (err, user) {
             if (err) {
@@ -79,7 +85,7 @@ module.exports = {
         }
     },
 
-    //POST - Update a user
+    //PUT - Update a user
     update: function (req, res, next) {
 
         var criteria = {};

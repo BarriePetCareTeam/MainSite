@@ -1,0 +1,27 @@
+{
+  "name": "MainSite",
+  "version": "0.0.0",
+  "homepage": "https://github.com/BarriePetCareTeam/MainSite",
+  "authors": [
+    "Brian Jacildo <brian_jacildo@yahoo.com>",
+    "AJ Almacin <aldrinjerome19@gmail.com>"
+  ],
+  "license": "MIT",
+  "description": "TODO",
+  "main": "",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.14.2",
+    "angular": "~1.4.7",
+    "angular-bootstrap": "~0.14.2"
+  }
+}
