@@ -8,7 +8,7 @@ angular.module('SignupModule').controller('SignupController', ['$scope', '$http'
             firstName : $scope.SignupPanel.firstName,
             lastName : $scope.SignupPanel.lastName,
             email : $scope.SignupPanel.email,
-            password : $scope.SignupPanel.password1
+            password : $scope.SignupPanel.password
         });
     }
 
