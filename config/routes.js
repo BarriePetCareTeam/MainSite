@@ -55,7 +55,7 @@ module.exports.routes = {
 
   'get /signup': {
       view: 'signup'
-  }
+  },
 
   // POST API
   'post /post': 'PostController.create',
